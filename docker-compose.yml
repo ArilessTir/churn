@@ -1,0 +1,60 @@
+version: '3.5'
+services:
+
+  python:
+    container_name: churn_ai
+    build:
+      context: ./AI
+    ports:
+      - 3001:3001
+    networks:
+      - churn_nets
+
+  prometheus:
+    image: prom/prometheus:v2.11.1
+    container_name: prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=365d'
+    ports:
+      - 9090:9090
+    networks:
+      - churn_nets
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - 3000:3000
+    depends_on:
+      - prometheus
+    networks:
+      - churn_nets
+
+  postgres:
+    image: postgres
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: userpwd
+      POSTGRES_DB: tuto
+    ports:
+      - "5432:5432"
+    networks:
+      - churn_nets
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    networks:
+      - churn_nets
+
+networks:
+  churn_nets:
+    driver: bridge

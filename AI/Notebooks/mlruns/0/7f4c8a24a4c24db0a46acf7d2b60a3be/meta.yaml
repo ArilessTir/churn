@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ariless/Bureau/IA/Machine_Learning/Projects/Churn/Notebooks/mlruns/0/7f4c8a24a4c24db0a46acf7d2b60a3be/artifacts
+end_time: 1646142457717
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 7f4c8a24a4c24db0a46acf7d2b60a3be
+run_uuid: 7f4c8a24a4c24db0a46acf7d2b60a3be
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1646142450927
+status: 3
+tags: []
+user_id: ariless

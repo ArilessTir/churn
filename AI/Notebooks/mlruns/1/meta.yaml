@@ -1,0 +1,4 @@
+artifact_location: file:///home/ariless/Bureau/IA/Machine_Learning/Projects/Churn/Notebooks/mlruns/1
+experiment_id: '1'
+lifecycle_stage: active
+name: Churn
