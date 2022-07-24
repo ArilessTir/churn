@@ -1,6 +1,8 @@
 # churn Prediction
 
 
-## run this project
+## For running this project
 
+```
 docker-compose up
+```
