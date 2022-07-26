@@ -1,6 +1,6 @@
 # Churn Prediction
 
-The goal of this project is to develop a ml api with FastApi for customer churn and try to monotor it with with Grafana
+The goal of this project is to develop a ml api with FastApi for customer churn and try to monotor it with Grafana
 
 ### The data source:
 
